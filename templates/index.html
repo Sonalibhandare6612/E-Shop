@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>E-shop</title>
     <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -14,7 +14,7 @@
     <div class="main">
         <header>
             <nav class="uppernav">
-                    <h1>E-Shop</h1>
+                <h1>E-Shop</h1>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
@@ -22,10 +22,8 @@
                 <li><a href="#">Accounts & Lists</a></li>
                 <li><a href="#">Return & orders</a></li>
                 <li><a href="#"><span><img src="/static/images/shopping-cart.png" height="40px" width="40px" alt="image"></span>Cart</a></li>
-                
-
             </nav>
-            <!-- <nav class="navbar1">
+            <nav class="navbar1">
                 <div class="container1">
                     <div class="collapse1">
                         <ul>
@@ -38,10 +36,10 @@
                             <li><a href="">Electronics</a></li>
                             <li><a href="">Customer Service</a></li>
                         </ul>
-                        
+
                     </div>
                 </div>
-            </nav> -->
+            </nav>
         </header>
         <h1>Hello Swapnali</h1>
         {% for product in products %}
