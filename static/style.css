@@ -1,19 +1,22 @@
 *{
-    margin: 0;
+    margin: 10vw;
     padding: 0;
-    font-size: 1.3vw;
+    font-size: 17vw;
+    width: 100%;
 }
+
 header .uppernav{
-    background-color: black;
+    background-color: rgb(50, 207, 50);
     color: white;
     display: flex;
     gap: 5vw;
-    width: 100%;
-    padding: 2vh 3vw;  
+    width: 50%;
+    padding: 1vh 3vw;  
     align-items: center;
+    height: 2vh;
 }
 header .uppernav .d-flex{
-    padding: 1vw;
+    padding: 6vw;
     width: 40%;
 }
 header .uppernav li{
@@ -24,3 +27,14 @@ header .uppernav li a{
     text-decoration: none;
 }
 
+
+
+
+
+
+@media (max-width:600px) {
+    .uppernav h1{
+        font-size: 5vh;
+    }
+    
+}
