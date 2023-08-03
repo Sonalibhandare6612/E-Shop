@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1.3vw;
+}
+header .uppernav{
+    background-color: black;
+    color: white;
+    display: flex;
+    gap: 5vw;
+    width: 100%;
+    padding: 2vh 3vw;  
+    align-items: center;
+}
+header .uppernav .d-flex{
+    padding: 1vw;
+    width: 40%;
+}
+header .uppernav li{
+    list-style: none;
+}
+header .uppernav li a{
+    color: white;
+    text-decoration: none;
+}
+
