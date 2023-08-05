@@ -1,4 +1,134 @@
-*{
+* {
     margin: 0;
     padding: 0;
+}
+
+.main{
+    position: relative;
+}
+
+
+
+
+/* Foooter section design */
+.footersec {
+    height: 70vh;
+    padding: 6vh;
+    background-color: rgb(39, 38, 38);
+    color: white;
+    text-align: center;
+    align-items: center;
+    font-size: 1.2vw;
+}
+
+.footersec .upfooter {
+    height: 75%;
+    display: flex; 
+    gap: 2rem;
+    justify-content: center; 
+    align-items: center; 
+    padding: 19vh 1vh;
+}
+
+.footersec .upfooter .about {
+    width: 32%;
+    text-align: center;
+    padding-top: 4vh;
+}
+
+.footersec .upfooter .about p {
+    text-align: justify;
+    padding: 5% 10%;
+}
+
+.footersec .upfooter .qlinks {
+    padding-bottom: 14vh;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 10%;
+}
+
+.footersec .upfooter .qlinks a {
+    text-decoration: none;
+    color: white;
+}
+
+.footersec .upfooter .qlinks a span {
+    padding: 0.5vw 1vw;
+    font-size: 1.3vw;
+}
+
+.footersec .upfooter .newsletter {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footersec .upfooter .newsletter input {
+    padding: 0.1vw;
+    border-radius: 5%;
+}
+
+.footersec .upfooter .newsletter .btn4 {
+    margin: 1vw;
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+}
+.footersec .upfooter .newsletter .btn4:hover{
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+}
+
+.footersec .upfooter .newsletter .social a{
+    color: white;
+    font-size: 35px;
+    padding: 12px;
+
+}
+.footersec .upfooter .newsletter .social a:hover{
+    color: blue;
+}
+
+.footersec .lowfooter {
+    padding-top: 5.5vh;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+}
+
+
+
+
+
+@media (max-width:800px) {
+    .footersec{
+        font-size: 3vh;
+        display: inline-block;
+        max-width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 1vw;
+        margin: auto;
+    }
+    .footersec .upfooter {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 1vw;
+        text-align: center;
+        padding: 5%;
+    }
+    .footersec .upfooter h4{
+        font-size: 4vw;
+    }
+    
 }
