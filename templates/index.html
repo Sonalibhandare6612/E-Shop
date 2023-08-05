@@ -81,24 +81,27 @@
     <!-- advertising section ends -->
     <!-- product section starts -->
     
-    <section class="products d-flex">
-      <div class="row flex-wrap ">
-        {% for product in products %}
+   <section class="container d-flex">
+  <div class="row">
+    {% for product in products %}
+    <div class="col-sm-3 mt-3 mb-3">
+      <div class="card">
+        <img src="https://images.freeimages.com/images/previews/82c/cloth-1144708.jpg" class="card-img-top" alt="image">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <a href="#" class="btn btn-primary">Order</a>
+          <a class="btn btn-primary " href="#" role="button">Link</a>
+          <button type="button" class="btn"></button>
+          <button type="button" class="btn"></button>
 
-        <div class="col-sm-4 mt-3 mb-3">
-          <div class="card">
-            <img src="https://images.freeimages.com/images/previews/82c/cloth-1144708.jpg" height="20%"
-              class="card-img-top" alt="image">
-            <div class="card-body">
-              <h5 class="card-title">{{product.name}}</h5>
-              <p class="card-text">{{product.description}}</p>
-              <a href="#" class="btn btn-primary">Order</a>
-            </div>
-          </div>
         </div>
-        {% endfor%}
       </div>
-    </section>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
 
 
     <!-- product section ends -->
