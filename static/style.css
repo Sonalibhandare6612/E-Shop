@@ -4,6 +4,20 @@
 }
 
 
+/* Define the default color */
+#likeButton i {
+    color: black;
+    /* Replace with your desired default color */
+}
+
+/* Define the color when the button is clicked */
+#likeButton.clicked i {
+    color: yellow;
+    /* Replace with your desired clicked color */
+}
+
+
+
 
 
 /* Foooter section design */
@@ -19,10 +33,10 @@
 
 .footersec .upfooter {
     height: 75%;
-    display: flex; 
+    display: flex;
     gap: 2rem;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     padding: 19vh 1vh;
 }
 
@@ -75,27 +89,29 @@
     border-radius: 5px;
     color: #fff;
 }
-.footersec .upfooter .newsletter .btn4:hover{
+
+.footersec .upfooter .newsletter .btn4:hover {
     background-color: white;
     color: black;
     transform: scale(1.1);
 }
 
-.footersec .upfooter .newsletter .social a{
+.footersec .upfooter .newsletter .social a {
     color: white;
     font-size: 35px;
     padding: 12px;
 
 }
-.footersec .upfooter .newsletter .social a:hover{
+
+.footersec .upfooter .newsletter .social a:hover {
     color: blue;
 }
 
 .footersec .lowfooter {
     padding-top: 5.5vh;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -104,7 +120,7 @@
 
 
 @media (max-width:800px) {
-    .footersec{
+    .footersec {
         font-size: 3vh;
         display: inline-block;
         max-width: 100%;
@@ -115,6 +131,7 @@
         padding: 1vw;
         margin: auto;
     }
+
     .footersec .upfooter {
         display: flex;
         flex-direction: column;
@@ -123,8 +140,9 @@
         text-align: center;
         padding: 5%;
     }
-    .footersec .upfooter h4{
+
+    .footersec .upfooter h4 {
         font-size: 4vw;
     }
-    
+
 }
