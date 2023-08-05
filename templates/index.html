@@ -2,100 +2,163 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-shop</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-shop</title>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
-    <div class="main">
-        <header>
-            <nav class="navbar navbar1 navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">E-Shop</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-2 p-2">
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Sell</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Mens</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Womens</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Electronics</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Kitchen</a>
-                      </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Accounts & Lists
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Log In</a></li>
-                          <li><a class="dropdown-item" href="#">Sign Up</a></li>
-                          <li><a class="dropdown-item" href="#">Return & Exchange</a></li>
-                          <li><a class="dropdown-item" href="#">Today's Deals</a></li>
-                          <li><a class="dropdown-item" href="#">Best Sellers</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item d-flex">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" fill="currentColor" class="bi bi-cart4" viewBox="0 0 19 15">
-                            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-                          </svg><a class="nav-link" href="#">Cart</a>
-                      </li>
-                    </ul>
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                  </div>
-                </div>
-              </nav> 
-            
-        </header>
-        <!-- advertising section starts -->
-        <div class="advertise d-flex mb-2 p-4">
-          <img src="https://cdn-icons-png.flaticon.com/256/6519/6519582.png" width="33%" class="img-fluid p-4" alt="Shopping">
-          <img src="https://cdn-icons-png.flaticon.com/256/9566/9566395.png" width="33%" class="img-fluid p-4" alt="Shopping">
-          <img src="https://cdn-icons-png.flaticon.com/256/8662/8662475.png" width="33%" class="img-fluid p-4" alt="Shopping">
+  <div class="main">
+    <header>
+      <nav class="navbar navbar-dark navbar-expand-lg navbar-light fs-5 bg-dark text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand fs-1 text-white" href="#">E-Shop</a>
+          <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-2 p-2">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Sell</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Mens</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Womens</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Electronics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Kitchen</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Accounts & Lists
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Log In</a></li>
+                  <li><a class="dropdown-item" href="#">Sign Up</a></li>
+                  <li><a class="dropdown-item" href="#">Return & Exchange</a></li>
+                  <li><a class="dropdown-item" href="#">Today's Deals</a></li>
+                  <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                </ul>
+              </li>
+              <li class="nav-item d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="39" fill="currentColor" class="bi bi-cart4"
+                  viewBox="0 0 19 15">
+                  <path
+                    d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                </svg><a class="nav-link text-white" href="#">Cart</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success text-white" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-         <!-- advertising section ends -->
-        <h1>Hello Swapnali</h1>
-        {% for product in products %}
-        <table>
-            <tr>
-                <td>{{product.name}}</td>
-                <td>{{product.category.name}}</td>
-                <td>{{product.price}}</td>
-                <td>{{product.image}}</td>
-            </tr>
-        </table>
+      </nav>
 
-        {% endfor %}
-
-
-
-
-
-
-
-
-
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-            crossorigin="anonymous"></script>
+    </header>
+    <!-- advertising section starts -->
+    <div class="advertise d-flex mb-2 p-4">
+      <img src="https://cdn-icons-png.flaticon.com/256/6519/6519582.png" width="33%" class="img-fluid p-4"
+        alt="Shopping">
+      <img src="https://cdn-icons-png.flaticon.com/256/9566/9566395.png" width="33%" class="img-fluid p-4"
+        alt="Shopping">
+      <img src="https://cdn-icons-png.flaticon.com/256/8662/8662475.png" width="33%" class="img-fluid p-4"
+        alt="Shopping">
     </div>
+    <!-- advertising section ends -->
+    <!-- product section starts -->
+    
+    <section class="products d-flex">
+      <div class="row flex-wrap ">
+        {% for product in products %}
+
+        <div class="col-sm-4 mt-3 mb-3">
+          <div class="card">
+            <img src="https://images.freeimages.com/images/previews/82c/cloth-1144708.jpg" height="20%"
+              class="card-img-top" alt="image">
+            <div class="card-body">
+              <h5 class="card-title">{{product.name}}</h5>
+              <p class="card-text">{{product.description}}</p>
+              <a href="#" class="btn btn-primary">Order</a>
+            </div>
+          </div>
+        </div>
+        {% endfor%}
+      </div>
+    </section>
+
+
+    <!-- product section ends -->
+
+
+
+
+
+
+
+
+
+
+    <!-- footer section starts -->
+    <!-- <footer>
+      <div class="footersec">
+          <div class="upfooter">
+              <div class="about">
+                  <h4>About Us</h4>
+                  <p>Fast-growing e-commerce company with diverse product range. Innovative, user-friendly platform. Secure payment options. Global shipping. Customer-centric approach. Excellent customer service. Competitive prices. Positive reviews. Sustainable practices. Mobile app availability.
+                  </p>
+
+              </div>
+              <div class="qlinks">
+                  <h4>Quick Links</h4> <br>
+                  <a href="#"><span>&#10148;</span>About Us</a>
+                  <a href="#"><span>&#10148;</span>Services</a>
+                  <a href="#"><span>&#10148;</span>Properties</a>
+                  <a href="#"><span>&#10148;</span>Our Clients</a>
+
+              </div>
+              <div class="newsletter">
+                  <h4>Subscribe to Newsletter</h4> <br>
+                  <input type="email" placeholder="Email">
+                  <button class="btn4">Send</button>
+                  <br>
+                  <div class="social">
+                      <h4>Follow Us</h4>
+                      <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                      <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                      <a href=""><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                      <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                  </div>
+
+              </div>
+          </div>
+          <hr>
+          <div class="lowfooter">
+              <p>copyright 2023 All rights Reserved | Designed by greatcoders.</p>
+          </div>
+      </div>
+  </footer>
+
+     footer section ends -->
+
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+  </div>
 
 </body>
 
