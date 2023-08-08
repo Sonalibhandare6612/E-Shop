@@ -70,13 +70,7 @@
 
     </header>
     <!-- advertising section starts -->
-    <div class="advertise d-flex mb-2 p-4">
-      <img src="https://cdn-icons-png.flaticon.com/256/6519/6519582.png" width="33%" class="img-fluid p-4"
-        alt="Shopping">
-      <img src="https://cdn-icons-png.flaticon.com/256/9566/9566395.png" width="33%" class="img-fluid p-4"
-        alt="Shopping">
-      <img src="https://cdn-icons-png.flaticon.com/256/8662/8662475.png" width="33%" class="img-fluid p-4"
-        alt="Shopping">
+    <div class="advertise container-fluid">“We Always deliver more than you expected.” 
     </div>
     <!-- advertising section ends -->
     <!-- product section starts -->
@@ -92,7 +86,7 @@
           <p class="card-text">{{product.description}}</p>
           <a href="#" class="btn btn-primary">Order</a>
           <a class="btn btn-primary " href="#" role="button">Add to cart</a>
-          <button class="btn" id="likeButton"><i class="fa fa-heart" aria-hidden="true"></i></button>
+          <button class="btn" data-product-id="{{product.id}}"><i class="fa fa-heart" aria-hidden="true"></i></button>
 
         </div>
       </div>
