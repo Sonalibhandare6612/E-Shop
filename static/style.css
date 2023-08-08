@@ -3,18 +3,33 @@
     padding: 0;
 }
 
+.advertise {
+    height: 55vh;
+    background-image: url("/static/images/images.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    font-size: 3vw;
+    color: white;
+    font-style: italic;
+    padding-top: 3em;
+    border-bottom: 4px solid black;
+}
+
 
 /* Define the default color */
-#likeButton i {
+.likeButton i {
     color: black;
     /* Replace with your desired default color */
 }
 
 /* Define the color when the button is clicked */
-#likeButton.clicked i {
-    color: yellow;
+.likeButton.clicked i {
+    color: red;
     /* Replace with your desired clicked color */
 }
+
+
 
 
 
