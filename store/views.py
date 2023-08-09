@@ -1,7 +1,17 @@
 from django.shortcuts import render, HttpResponse
-from .models import Products
+from .models import Products, Category
+from . import models
 
 # Create your views here.
 def index(request):
-    prds = Products.get_all_products()
-    return render(request, "index.html", {'products': prds})
+    products = Products.get_all_products()
+    categories = Category.get_all_categories()
+    data = {}
+    data['products'] = products
+    data['categories'] = categories
+    return render(request, "index.html",data)
+
+
+
+def order(request):
+    return HttpResponse(request, "ITS order page")
