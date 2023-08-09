@@ -2,32 +2,70 @@
     margin: 0;
     padding: 0;
 }
+/* toggle button color */
 
-.advertise {
-    height: 55vh;
-    background-image: url("/static/images/images.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    font-size: 3vw;
-    color: white;
-    font-style: italic;
-    padding-top: 3em;
-    border-bottom: 4px solid black;
+.navbar-toggler {
+    background-color: rgba(240, 233, 233, 0.836);
+    border-color: rgba(255, 255, 255, 0.966);
+}
+
+/* Custom styles for the toggler button icon */
+.navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.678);
+    border-radius: 3px;
 }
 
 
-/* Define the default color */
-.likeButton i {
+
+
+
+.halfcircle{
+    position: absolute;
+    width: 11vw;
+    height: 8vw;
+    box-shadow: 0px 4px 2px 0px rgb(71, 69, 69);
+    background: linear-gradient(to top, red 90%, transparent 50%);
+    border-top-right-radius: 65px;
+    border-bottom-left-radius: 40px;
+}
+.jumbotron{
+    margin: 4vw;
+    margin-top: 2vw;
+    background-color: rgba(236, 245, 242, 0.911);
+    box-shadow: 3px 3px 3px 3px rgba(63, 61, 61, 0.856);
+    border-radius: 20px;
     color: black;
-    /* Replace with your desired default color */
+    padding: 4vw;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.jumbotron p{
+    padding: 5vw;
+}
+.jumbotron h6 span{
+    color: red;
+}
+.jumbotron .btn1{
+    color:  white;
+    background-color: red;
+    text-decoration: none;
+    padding: 1.6vh 2.3vw;
 }
 
-/* Define the color when the button is clicked */
-.likeButton.clicked i {
-    color: red;
-    /* Replace with your desired clicked color */
+/* button like */
+#color-change-button {
+    padding: 1vw;
+    font-size: 1.5vw;
+    color: rgba(65, 60, 60, 0.829);
+    border: none;
+    cursor: pointer;
 }
+
+#color-change-button.clicked {
+    color: yellow;
+}
+
 
 
 
