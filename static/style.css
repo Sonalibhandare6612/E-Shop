@@ -33,7 +33,6 @@
     margin-top: 2vw;
     background-color: rgba(236, 245, 242, 0.911);
     box-shadow: 3px 3px 3px 3px rgba(63, 61, 61, 0.856);
-    border-radius: 20px;
     color: black;
     padding: 4vw;
     text-align: center;
@@ -46,7 +45,7 @@
 .jumbotron h6 span{
     color: red;
 }
-.jumbotron .btn1{
+.jumbotron .btns{
     color:  white;
     background-color: red;
     text-decoration: none;
