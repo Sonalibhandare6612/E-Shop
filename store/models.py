@@ -31,7 +31,7 @@ class Products(models.Model):
     
     
     @staticmethod
-    def get_all_products_by_id(category_id):
+    def get_all_products_by_categoryid(category_id):
         if category_id:
             return Products.objects.filter(category = category_id)   
         else:
