@@ -20,5 +20,11 @@ def index(request):
 
 
 
+def signup(request):
+    return render(request, "signup.html")
+    
+
+
+
 def order(request):
     return HttpResponse(request, "ITS order page")
