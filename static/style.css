@@ -51,6 +51,16 @@
     text-decoration: none;
     padding: 1.6vh 2.3vw;
 }
+/* cards */
+.col-sm-4.mt-2.mb-2 .card {
+    border-width: 3px; 
+    border-style: solid; 
+    border-color: #585656be; 
+    border-radius: 0;
+}
+.col-sm-4.mt-2.mb-2 .card img{
+    border-radius: 0%;
+}
 
 /* button like */
 #color-change-button {
@@ -166,6 +176,12 @@
     justify-content: center;
     text-align: center;
 }
+
+.thisbg{
+    margin: 0;
+    background-color: #e4e1e1a1;
+}
+
 
 
 
