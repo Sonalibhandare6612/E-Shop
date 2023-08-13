@@ -36,3 +36,31 @@ class Products(models.Model):
             return Products.objects.filter(category = category_id)   
         else:
             return Products.get_all_products()
+
+
+
+
+class Customer(models.Model):
+    cname = models.CharField(max_length=100)
+    cemail = models.EmailField()
+    phone = models.IntegerField(10)
+    password = models.CharField(max_length=500)
+    
+    
+    def __str__(self):
+        return self.cname 
+    
+    
+    def register(self):
+        self.save()
+        
+        
+    def isExistEmail(self):
+        if Customer.objects.filter(cemail = self.cemail):
+            return True
+            
+        else:
+            return False    
+    
+    
+    
