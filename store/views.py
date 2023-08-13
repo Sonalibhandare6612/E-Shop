@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse
-from .models import Products, Category
+from django.shortcuts import render, redirect, HttpResponse
+from .models import Products, Category, Customer
 from . import models
 
 # Create your views here.
@@ -21,7 +21,55 @@ def index(request):
 
 
 def signup(request):
-    return render(request, "signup.html")
+    if request.method == 'GET':
+        return render(request, 'signup.html')
+    
+    else :
+        postData = request.POST
+        name = postData.get('name')
+        phone = postData.get('phone')
+        email = postData.get('email')
+        password = postData.get('password')
+        
+        #keeping input data as it is after refresh page
+        value = {
+            'name' : name,
+            'phone' : phone,
+            'email' : email,
+        }
+        
+        # Validation of input fields
+        error_msg = None
+        
+        customer = Customer(cname=name, 
+                            phone=phone, 
+                            cemail=email, 
+                            password=password)
+        
+        
+        
+        
+        if(not name):
+            error_msg = "Name reuired !!"
+        elif len(name) < 4:
+            error_msg = "Name should be more than 4 characters !!"    
+        
+        elif customer.isExistEmail():
+            error_msg = 'Email allready registered'    
+        # saving data
+        if not error_msg:
+            pass
+        
+            customer.register()
+            return redirect("index")
+            
+        else :
+            data = {
+                'error' : error_msg,
+                'values' : value
+            }
+            return render(request, "signup.html", data)
+                
     
 
 
