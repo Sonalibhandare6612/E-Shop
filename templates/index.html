@@ -5,20 +5,20 @@
 
 
 {% block content %}
-<div class="advertise container-fluid">
+<div class="advertise container-fluid mt-4">
   <div class="jumbotron jumbotron-fluid">
     <div class="halfcircle d-none d-sm-block"></div>
-    <h6 class="display-4 ml-2">Sale Upto <span>50%</span> Off</h6>
+    <h6 class="display-4 ml-2 mt-5 my-5">Save Upto <span>50%</span> Off</h6>
     <div class="container container1 d-flex">
       <p class="display-6 ml-2"> “We always deliver more than you expected”</p>
-      <img class="d-none d-sm-block" src="/static/images/girl2.jpeg" height="250vw" width="60%" alt="image">
+      <img class="d-none d-sm-block" src="/static/images/online-shopping.png" height="200vw" width="30%" alt="image">
     </div>
     <a class="btn btns" href="#" role="button">Shop Now</a>
   </div>
 </div>
 
 
-<div class="container-fluid d-flex">
+<div class="container-fluid d-flex bg-light">
   <div class="list-group col-lg-3 pt-3 px-4 mx-auto d-none d-sm-block">
     <a href="/" class="list-group-item list-group-item-action py-3 fs-5">All Products</a>
       {% for category in categories %}
@@ -31,14 +31,14 @@
   <section class="col-lg-9">
     <div class="row">
       {% for product in products %}
-      <div class="col-sm-4 mt-2 mb-2">
-        <div class="card">
+      <div class="col-sm-4 mt-4 mb-2">
+        <div class="card shadow">
           <img src="{{product.image.url}}" height="300vh" class="card-img-top" alt="image">
           <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
             <a href="#" class="btn btn-primary">Order</a>
-            <a class="btn btn-primary" href="#" role="button">Add to cart</a>
+            <a class="btn btn-primary" href="#" role="button">+cart</a>
             <button class="btn color-change-button" id="color-change-button" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
                 aria-hidden="true"></i></button>
 
