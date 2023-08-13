@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponse
+from django.contrib.auth.hashers import make_password, check_password
 from .models import Products, Category, Customer
 from . import models
 
@@ -58,8 +59,7 @@ def signup(request):
             error_msg = 'Email allready registered'    
         # saving data
         if not error_msg:
-            pass
-        
+            customer.password = make_password(customer.password)
             customer.register()
             return redirect("index")
             
