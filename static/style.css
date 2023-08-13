@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 /* toggle button color */
 
 .navbar-toggler {
@@ -19,61 +20,43 @@
 
 
 
-.halfcircle{
+.halfcircle {
     position: absolute;
     width: 11vw;
     height: 8vw;
-    box-shadow: 0px 4px 2px 0px rgb(71, 69, 69);
-    background: linear-gradient(to top, red 90%, transparent 50%);
+    box-shadow: 0px 4px 2px 0px rgb(160, 157, 157);
+    background: linear-gradient(to top, rgb(248, 67, 67) 90%, transparent 50%);
     border-top-right-radius: 65px;
     border-bottom-left-radius: 40px;
 }
-.jumbotron{
-    margin: 4vw;
-    margin-top: 2vw;
-    background-color: rgba(236, 245, 242, 0.911);
-    box-shadow: 3px 3px 3px 3px rgba(63, 61, 61, 0.856);
+
+.jumbotron {
+    margin: 1vw;
+    margin-top: 9vw;
+    background-color: rgba(236, 241, 241, 0.096);
+    box-shadow: 3px 3px 3px 3px rgba(27, 26, 26, 0.856);
     color: black;
     padding: 4vw;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
-.jumbotron p{
+
+.jumbotron p {
     padding: 5vw;
 }
-.jumbotron h6 span{
-    color: red;
+
+.jumbotron h6 span {
+    color: rgb(248, 67, 67);
 }
-.jumbotron .btns{
-    color:  white;
-    background-color: red;
+
+.jumbotron .btns {
+    color: white;
+    background-color: rgb(248, 67, 67);
     text-decoration: none;
     padding: 1.6vh 2.3vw;
 }
-/* cards */
-.col-sm-4.mt-2.mb-2 .card {
-    border-width: 3px; 
-    border-style: solid; 
-    border-color: #585656be; 
-    border-radius: 0;
-}
-.col-sm-4.mt-2.mb-2 .card img{
-    border-radius: 0%;
-}
 
-/* button like */
-#color-change-button {
-    padding: 1vw;
-    font-size: 1.5vw;
-    color: rgba(65, 60, 60, 0.829);
-    border: none;
-    cursor: pointer;
-}
-
-#color-change-button.clicked {
-    color: yellow;
-}
 
 
 
@@ -176,12 +159,6 @@
     justify-content: center;
     text-align: center;
 }
-
-.thisbg{
-    margin: 0;
-    background-color: #e4e1e1a1;
-}
-
 
 
 
