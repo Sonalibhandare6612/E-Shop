@@ -174,7 +174,7 @@
         flex-direction: column;
         flex-wrap: nowrap;
         padding: 1vw;
-        margin: auto;
+        margin: auto 0px;
     }
 
     .footersec .upfooter {
@@ -184,6 +184,11 @@
         gap: 1vw;
         text-align: center;
         padding: 5%;
+        margin: 0;
+    }
+    .footersec .upfooter .about{
+        width: 100%;
+        margin: 2vh;
     }
 
     .footersec .upfooter h4 {
