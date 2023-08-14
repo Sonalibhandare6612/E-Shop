@@ -53,7 +53,13 @@ class Customer(models.Model):
     
     def register(self):
         self.save()
-        
+    
+    @staticmethod
+    def get_customer_by_email(cemail):
+        try:
+            return Customer.objects.get(cemail=cemail) 
+        except Customer.DoesNotExist:
+            return None       
         
     def isExistEmail(self):
         if Customer.objects.filter(cemail = self.cemail):
