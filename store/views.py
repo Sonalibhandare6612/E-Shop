@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.hashers import make_password, check_password
 from .models import Products, Category, Customer
 from . import models
+from django.views import View
 
 # Create your views here.
 def index(request):
@@ -19,78 +20,81 @@ def index(request):
     data['categories'] = categories
     return render(request, "index.html",data)
 
-def validateCustomer(customer):
-    error_msg = None
-    if(not customer.cname):
-        error_msg = "Name required !!"
-    elif len(customer.cname) < 4:
-        error_msg = "Name should be more than 4 characters !!"    
-    if(not customer.phone):
-        error_msg = "phone reuired !!"
-    elif len(customer.phone) < 10:
-        error_msg = "phone should be more than 10 integers !!"    
-    if(not customer.cemail):
-        error_msg = "email reuired !!"
-    elif len(customer.cemail) < 5:
-        error_msg = "email should be more than 5 characters !!"    
-    if(not customer.password):
-        error_msg = "password reuired !!"
-    elif len(customer.password) < 6:
-        error_msg = "password should be more than 6 integers !!"        
-    elif customer.isExistEmail():
-        error_msg = 'Email allready registered' 
-    return error_msg    
 
-def registerUser(request):
-    postData = request.POST
-    cname = postData.get('cname')
-    phone = postData.get('phone')
-    cemail = postData.get('cemail')
-    password = postData.get('password')
+
+    
+    
+class Signup(View):
+    def get(self,request):
+        return render(request, 'signup.html')
+    
+    def post(self, request):
+        postData = request.POST
+        cname = postData.get('cname')
+        phone = postData.get('phone')
+        cemail = postData.get('cemail')
+        password = postData.get('password')
         
     #keeping input data as it is after refresh page
-    value = {
+        value = {
         'cname' : cname,
         'phone' : phone,
         'cemail' : cemail,
-    }      
-    error_msg = None    
-    customer = Customer(cname=cname, 
-                        phone=phone, 
-                        cemail=cemail, 
-                        password=password)
+        }      
+        error_msg = None    
+        customer = Customer(cname=cname, 
+                            phone=phone, 
+                            cemail=cemail, 
+                            password=password)
     
-    error_msg =  validateCustomer(customer)
+        error_msg =  self.validateCustomer(customer)
         
         
-    if not error_msg:
-        customer.password = make_password(customer.password)
-        customer.register()
-        return redirect("index")
+        if not error_msg:
+           customer.password = make_password(customer.password)
+           customer.register()
+           return redirect("index")
             
-    else :
-        data = {
-            'error' : error_msg,
-            'values' : value
-        }
+        else :
+            data = {
+                'error' : error_msg,
+                'values' : value
+            }
         return render(request, "signup.html", data)
     
-
-def signup(request):
-    if request.method == 'GET':
-        return render(request, 'signup.html')
-    else :
-        return registerUser(request)
+    def validateCustomer(self,customer):
+        error_msg = None
+        if(not customer.cname):
+            error_msg = "Name required !!"
+        elif len(customer.cname) < 4:
+            error_msg = "Name should be more than 4 characters !!"    
+        if(not customer.phone):
+            error_msg = "phone reuired !!"
+        elif len(customer.phone) < 10:
+            error_msg = "phone should be more than 10 integers !!"    
+        if(not customer.cemail):
+            error_msg = "email reuired !!"
+        elif len(customer.cemail) < 5:
+            error_msg = "email should be more than 5 characters !!"    
+        if(not customer.password):
+            error_msg = "password reuired !!"
+        elif len(customer.password) < 6:
+            error_msg = "password should be more than 6 integers !!"        
+        elif customer.isExistEmail():
+            error_msg = 'Email allready registered' 
+        return error_msg    
+        
 
 
 def order(request):
     return HttpResponse(request, "ITS order page")
 
 
-def login(request):
-    if request.method == 'GET':
+# Creating Class based view for login
+class Login(View):
+    def get(self, request):
         return render(request, "login.html")
-    elif request.method == 'POST':
+    def post(self, request):
         cemail = request.POST.get('cemail')
         password = request.POST.get('password')
         loginuser = Customer.get_customer_by_email(cemail)
@@ -104,6 +108,9 @@ def login(request):
         else:
             error_msg = "User not found !"
             
-        return render(request, 'login.html', {'error' : error_msg})
+        return render(request, 'login.html', {'error' : error_msg}) 
+    
+    
+
     
         
