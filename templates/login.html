@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container-fluid p-5">
+    <div class="container-fluid d-flex py-5">
+        <div class="col-md-4 p-5 d-none d-sm-block">
+            <img src="/static/images/signup-image.jpg" class="img-fluid" alt="Responsive Image">
+        </div>
+        <div class="container my-auto">
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8 col-md-9 mt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="text-center">Login Here</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="/login" method="post">
+                                {% csrf_token %}
+                                {% if error %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ error }}
+                                </div>
+                                {% endif %}
+
+
+                                {% if msg %}
+                                <div class="alert alert-success" role="alert">
+                                    {{ msg }}
+                                </div>
+                                {% endif %}
+                               
+                                
+                                <div class="form-group mt-2">
+                                    <label for="cemail">Email</label>
+                                    <input required type="cemail" class="form-control" id="cemail" value="{{values.cemail}}" name="cemail">
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label for="password">Password</label>
+                                    <input required type="password" class="form-control" id="password" placeholder="********" name="password">
+                                </div>
+                               
+                                <button type="submit" class="col-lg-4 btn btn-primary btn-block mt-2" value="login">Login</button>
+                                <a class="p-3" href="/signup">Sign Up</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+{% endblock %}
