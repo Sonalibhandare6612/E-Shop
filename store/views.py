@@ -102,6 +102,8 @@ class Login(View):
         if loginuser:
             flag = check_password(password, loginuser.password)
             if flag:
+                request.session['loginuser_id'] = loginuser.id
+                request.session['cemail'] = loginuser.cemail
                 return redirect("index")
             else:
                 error_msg = "Invalid password !"
