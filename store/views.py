@@ -10,9 +10,12 @@ class Index(View):
         product = request.POST.get('product')
         cart = request.session.get('cart')
         if cart:
-            pass
+            cart[product] = 1
         else:
-            pass
+            cart = {}
+            cart[product] = 1
+            
+        request.session['cart'] = cart  
         return redirect("index")
     
     
