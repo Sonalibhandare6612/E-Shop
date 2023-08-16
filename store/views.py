@@ -113,8 +113,7 @@ class Login(View):
         if loginuser:
             flag = check_password(password, loginuser.password)
             if flag:
-                request.session['loginuser_id'] = loginuser.id
-                request.session['cemail'] = loginuser.cemail
+                request.session['loginuser'] = loginuser.id
                 return redirect("index")
             else:
                 error_msg = "Invalid password !"
@@ -122,8 +121,10 @@ class Login(View):
             error_msg = "User not found !"
             
         return render(request, 'login.html', {'error' : error_msg}) 
-    
-    
+      
 
     
-        
+
+def logout(request):
+    request.session.clear()
+    return redirect('Login')         
