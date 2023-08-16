@@ -9,4 +9,5 @@ urlpatterns = [
     path("order", views.order, name="order"),
     path("signup", views.Signup.as_view(), name="Signup"),
     path("login", views.Login.as_view(), name="Login"),
+    path("logout", views.logout, name="logout"),
 ]
