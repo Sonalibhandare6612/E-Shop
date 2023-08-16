@@ -6,16 +6,7 @@ from django.views import View
 
 # Create your views here.
 class Index(View):
-    def post(self, request):
-        product = request.POST.get('product')
-        cart = request.session.get('cart')
-        if cart:
-            cart[product] = 1
-        else:
-            cart = {}
-            cart[product] = 1
-            
-        request.session['cart'] = cart  
+    def post(self):
         return redirect("index")
     
     
