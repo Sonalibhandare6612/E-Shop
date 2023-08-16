@@ -5,21 +5,33 @@ from . import models
 from django.views import View
 
 # Create your views here.
-def index(request):
-    products = None
-    categories = Category.get_all_categories()
-    categoryID = request.GET.get('category')
-    if categoryID:
-        products = Products.get_all_products_by_categoryid(categoryID)
+class Index(View):
+    def post(self, request):
+        product = request.POST.get('product')
+        return redirect("index")
+    
+    
+    
+    
+    def get(self, request):
+        products = None
+        categories = Category.get_all_categories()
+        categoryID = request.GET.get('category')
+        if categoryID:
+            products = Products.get_all_products_by_categoryid(categoryID)
         
-    else:
-        products = Products.get_all_products()    
+        else:
+            products = Products.get_all_products()    
         
-    data = {}
-    data['products'] = products
-    data['categories'] = categories
-    return render(request, "index.html",data)
+        data = {}
+        data['products'] = products
+        data['categories'] = categories
+        return render(request, "index.html",data)
 
+        
+        
+        
+        
 
 
     
