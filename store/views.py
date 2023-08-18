@@ -114,7 +114,8 @@ class Login(View):
             flag = check_password(password, loginuser.password)
             if flag:
                 request.session['loginuser'] = loginuser.id
-                return redirect("index")
+                logoutflag = True
+                return redirect("index", {'logoutflag':logoutflag})
             else:
                 error_msg = "Invalid password !"
         else:
