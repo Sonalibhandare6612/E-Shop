@@ -123,8 +123,10 @@ class Login(View):
             
         return render(request, 'login.html', {'error' : error_msg}) 
       
-
-    
+      
+      
+      
+      
 
 def logout(request):
     request.session.clear()
