@@ -131,3 +131,9 @@ class Login(View):
 def logout(request):
     request.session.clear()
     return redirect('Login')         
+
+
+
+class Contact(View):
+    def get(self, request):
+        return render(request, "contact.html")
