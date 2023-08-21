@@ -142,4 +142,4 @@ class Contact(View):
     
 class Cart(View):
     def get(self, request):
-        return render(request, "cart.html")    
+        return render(request, "cart.html")  
