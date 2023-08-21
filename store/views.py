@@ -137,3 +137,9 @@ def logout(request):
 class Contact(View):
     def get(self, request):
         return render(request, "contact.html")
+    
+    
+    
+class Cart(View):
+    def get(self, request):
+        return render(request, "cart.html")    
