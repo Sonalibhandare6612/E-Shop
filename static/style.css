@@ -59,6 +59,93 @@
 
 /* 
 contact page design */
+.maincontainer {
+    width: 100%;
+    background-color: #f5f7f8
+}
+
+.maincontainer .card {
+    margin: 1vw;
+    font-size: 1.3vw;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.maincontainer .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.maincontainer .card a {
+    text-decoration: none;
+}
+
+.headcontainer {
+    margin-top: 10vh;
+    position: relative;
+    top: 15vh;
+    text-align: center;
+}
+
+/* Style the heading and add the horizontal line */
+.heading {
+    position: relative;
+    font-size: 3vw;
+    padding-bottom: 25px;
+    /* Space for the line */
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Position the line at the center */
+    transform: translateX(-50%);
+    /* Center the line horizontally */
+    width: 5vw;
+    /* Adjust the width of the line */
+    height: 2px;
+    /* Adjust the height of the line */
+    background-color: #333;
+    /* Adjust the line color */
+}
+
+
+.maincontainer .flex-box {
+    background:white;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+    height: 60vh;
+}
+.maincontainer .flexdiv{
+    text-align: center;
+    padding: 4vw;
+    font-size: 1.3vw;
+}
+.maincontainer .flex-box input{
+    width: 37vw;
+    padding: 1.5vh;
+    margin: 1.5vh;
+    background-color: #f5f7f8;
+}
+.maincontainer .flex-box textarea{
+    width: 37vw;
+    padding: 1.5vh;
+    margin: 1.5vh;
+    background-color: #f5f7f8;
+}
+.maincontainer .flex-box button{
+    width: 14vw;
+    padding: 1.5vh;
+    margin: 1.1vh;
+    border-radius: 0;
+}
+
+
 
 
 
@@ -193,7 +280,8 @@ contact page design */
         padding: 5%;
         margin: 0;
     }
-    .footersec .upfooter .about{
+
+    .footersec .upfooter .about {
         width: 100%;
         margin: 2vh;
     }
