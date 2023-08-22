@@ -33,14 +33,13 @@
 .jumbotron {
     margin: 1vw;
     margin-top: 9vw;
-    background-color: rgba(201, 226, 226, 0.096);
+    background-color: rgba(236, 241, 241, 0.096);
     box-shadow: 3px 3px 3px 3px rgba(27, 26, 26, 0.856);
     color: black;
     padding: 4vw;
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: none;
 }
 
 .jumbotron p {
