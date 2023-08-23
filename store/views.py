@@ -25,6 +25,7 @@ class Index(View):
         data = {}
         data['products'] = products
         data['categories'] = categories
+        print(request.session.get('cemail'))
         return render(request, "index.html",data)
 
         
@@ -105,6 +106,8 @@ def order(request):
 class Login(View):
     def get(self, request):
         return render(request, "login.html")
+    
+    
     def post(self, request):
         cemail = request.POST.get('cemail')
         password = request.POST.get('password')
@@ -114,8 +117,9 @@ class Login(View):
             flag = check_password(password, loginuser.password)
             if flag:
                 request.session['loginuser'] = loginuser.id
-                logoutflag = True
-                return redirect("index", {'logoutflag':logoutflag})
+                request.session['cemail'] = loginuser.cemail
+                #logoutflag = True
+                return redirect("index")
             else:
                 error_msg = "Invalid password !"
         else:
