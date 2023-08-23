@@ -10,7 +10,7 @@
       <p class="display-6 ml-2"> “We always deliver more than you expected”</p>
       <img class="d-none d-sm-block" src="/static/images/online-shopping.png" height="200vw" width="30%" alt="image">
     </div>
-    <a class="btn btns" href="#" role="button" onclick="addedToCart()">Shop Now</a>
+    <a class="btn btns" href="#" role="button">Shop Now</a>
   </div>
 </div>
 
@@ -35,8 +35,8 @@
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
             <a href="#" class="btn btn-primary m-1">Order</a>
-            <a class="btn btn-primary m-1" href="#" role="button">+cart</a>
-            <button class="btn color-change-button" id="color-change-button" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
+            <button class="btn btn-primary m-1" onclick="addedToCart()">+cart</button>
+            <button class="btn" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
                 aria-hidden="true"></i></button>
 
           </div>
