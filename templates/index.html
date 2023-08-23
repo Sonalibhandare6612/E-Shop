@@ -18,14 +18,14 @@
 <div class="container-fluid d-flex bg-light">
   <div class="list-group col-lg-3 pt-3 px-4 mx-auto d-none d-sm-block">
     <a href="/" class="list-group-item list-group-item-action py-3 fs-5">All Products</a>
-      {% for category in categories %}
-      <a href="/?category={{category.id}}" class="list-group-item list-group-item-action py-3 fs-5">{{ category.name}}</a>
-      {% endfor %}
-   
+    {% for category in categories %}
+    <a href="/?category={{category.id}}" class="list-group-item list-group-item-action py-3 fs-5">{{ category.name}}</a>
+    {% endfor %}
+
   </div>
 
 
-  <section class="col-lg-9">
+  <section class="col-lg-9" id="productsec">
     <div class="row">
       {% for product in products %}
       <div class="col-sm-4 mt-4 mb-2">
@@ -34,10 +34,19 @@
           <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description}}</p>
-            <a href="#" class="btn btn-primary m-1">Order</a>
-            <button class="btn btn-primary m-1" onclick="addedToCart()">+cart</button>
-            <button class="btn" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
+            <p class="card-text"><b>{{product.price}}</b></p>
+            <!-- <a href="#" class="btn btn-primary m-1">Order</a> -->
+            <form action="#productsec" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="product" value="{{product.id}}">
+              <input type="hidden" name="price" value="{{product.price}}">
+              <input type="hidden" name="productimg" value="{{product.image.url}}">
+              <a href="#" class="btn btn-primary m-1">Order</a>
+              <input type="submit" class="btn btn-primary m-1" value="Cart" onclick="addedToCart()">
+              <button class="btn" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
                 aria-hidden="true"></i></button>
+
+            </form>
 
           </div>
         </div>
@@ -46,7 +55,7 @@
     </div>
   </section>
 
- 
+
 
 </div>
 
