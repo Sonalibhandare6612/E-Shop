@@ -6,10 +6,22 @@ from django.views import View
 
 # Create your views here.
 class Index(View):
-    def post(self):
+    def post(self, request):
+        product = request.POST.get('product')
+        cart = request.session.get('cart')
+        if cart:
+            quantity = cart.get(product)
+            if quantity:
+                cart[product] = quantity + 1
+            else:
+                cart[product] = 1    
+        else:
+            cart = {}
+            cart[product] = 1
+            
+        request.session['cart'] = cart   
+        print(request.session['cart']) 
         return redirect("index")
-    
-    
     
     
     def get(self, request):
@@ -25,7 +37,6 @@ class Index(View):
         data = {}
         data['products'] = products
         data['categories'] = categories
-        print(request.session.get('cemail'))
         return render(request, "index.html",data)
 
         
@@ -144,6 +155,61 @@ class Contact(View):
     
     
     
+
+
+# class Cart(View):
+#     def __init__(self):
+#         self.cart = {}
+    
+#     def post(self, request):
+#         product_id = int(request.POST.get('product_id'))
+#         cart = request.session.get('cart', self.cart)
+        
+#         product = Products.objects.get(id=product_id)  # Fetch the product from your database
+#         if product_id in cart:
+#             cart[product_id]['quantity'] += 1
+#         else:
+#             product_info = {
+#                 'name': product.name,
+#                 'image_url': product.image.url,  # Assuming you have an ImageField in your model
+#                 'price': product.price,
+#                 'quantity': 1
+#             }
+#             cart[product_id] = product_info
+            
+#         request.session['cart'] = cart
+#         return redirect("index")
+
 class Cart(View):
+    def __init__(self):
+        self.cart = {}
+    
     def get(self, request):
-        return render(request, "cart.html")  
+        self.cart = request.session.get('cart', self.cart)
+        return render(request, "cart.html", {'cart': self.cart})
+    
+    def post(self, request):
+        product = request.POST.get('product')
+        productimg = request.POST.get('productimg')  # Get the image URL
+        price = request.POST.get('price')  # Get the image URL
+        if self.cart:
+            quantity = self.cart.get(product)
+            if quantity:
+                self.cart[product]['quantity'] += 1  # Update quantity
+            else:
+                self.cart[product] = {
+                    'quantity': 1,
+                    'image_url': productimg,  # Store the image URL in the cart
+                    'price' : price
+                }
+        else:
+            self.cart = {}
+            self.cart[product] = {
+                'quantity': 1,
+                'image_url': productimg,  # Store the image URL in the cart
+                'price' : price
+            }
+        
+        request.session['cart'] = self.cart
+        return redirect("index")
+
