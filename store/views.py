@@ -123,12 +123,12 @@ class Login(View):
         password = request.POST.get('password')
         loginuser = Customer.get_customer_by_email(cemail)
         error_msg = None
+        logoutflag = False
         if loginuser:
             flag = check_password(password, loginuser.password)
             if flag:
                 request.session['loginuser'] = loginuser.id
                 request.session['cemail'] = loginuser.cemail
-                #logoutflag = True
                 return redirect("index")
             else:
                 error_msg = "Invalid password !"
@@ -154,30 +154,6 @@ class Contact(View):
     
     
     
-
-
-# class Cart(View):
-#     def __init__(self):
-#         self.cart = {}
-    
-#     def post(self, request):
-#         product_id = int(request.POST.get('product_id'))
-#         cart = request.session.get('cart', self.cart)
-        
-#         product = Products.objects.get(id=product_id)  # Fetch the product from your database
-#         if product_id in cart:
-#             cart[product_id]['quantity'] += 1
-#         else:
-#             product_info = {
-#                 'name': product.name,
-#                 'image_url': product.image.url,  # Assuming you have an ImageField in your model
-#                 'price': product.price,
-#                 'quantity': 1
-#             }
-#             cart[product_id] = product_info
-            
-#         request.session['cart'] = cart
-#         return redirect("index")
 
 class Cart(View):
     def __init__(self):
