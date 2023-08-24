@@ -5,12 +5,14 @@
 <div class="advertise container-fluid mt-4">
   <div class="jumbotron jumbotron-fluid">
     <div class="halfcircle d-none d-sm-block"></div>
-    <h6 class="display-4 ml-2 mt-5 my-5">Save Upto <span>50%</span> Off</h6>
+    <div class="animation-container">
+      <h6 class="animate-heading display-4 ml-2 mt-5 my-5">Save Upto <span>50%</span> Off</h6>
+    </div>
     <div class="container container1 d-flex">
       <p class="display-6 ml-2"> “We always deliver more than you expected”</p>
       <img class="d-none d-sm-block" src="/static/images/online-shopping.png" height="200vw" width="30%" alt="image">
     </div>
-    <a class="btn btns" href="#" role="button">Shop Now</a>
+    <a class="btn btns" href="#productsec" role="button">Shop Now</a>
   </div>
 </div>
 
@@ -37,13 +39,13 @@
             <p class="card-text">{{product.description}}</p>
             <p class="card-text"><b>{{product.price}}</b></p>
             <!-- <a href="#" class="btn btn-primary m-1">Order</a> -->
-            <form action="#productsec" method="POST">
+            <form action="{% url 'cart' %}" method="POST">
               {% csrf_token %}
               <input type="hidden" name="product" value="{{product.id}}">
               <input type="hidden" name="price" value="{{product.price}}">
               <input type="hidden" name="productimg" value="{{product.image.url}}">
               <a href="#" class="btn btn-primary m-1">Order</a>
-              <input type="submit" class="btn btn-primary m-1" value="Cart" onclick="addedToCart()">
+              <input type="submit" class="btn btn-primary m-1" value="Cart">
               <button class="btn" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
                 aria-hidden="true"></i></button>
 
