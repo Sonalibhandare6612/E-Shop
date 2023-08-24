@@ -33,7 +33,7 @@
 .jumbotron {
     margin: 1vw;
     margin-top: 9vw;
-    background-color: rgba(236, 241, 241, 0.096);
+    background-color: rgba(180, 214, 241, 0.39);
     box-shadow: 3px 3px 3px 3px rgba(27, 26, 26, 0.856);
     color: black;
     padding: 4vw;
@@ -56,6 +56,45 @@
     text-decoration: none;
     padding: 1.6vh 2.3vw;
 }
+
+
+
+.animation-container {
+    text-align: center;
+}
+
+.animate-heading {
+    overflow: hidden;
+    border-right: 0.15em solid rgba(180, 214, 241, 0.39);
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 60%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: rgba(180, 214, 241, 0.39);
+    }
+}
+
 
 /* 
 contact page design */
@@ -115,30 +154,34 @@ contact page design */
 
 
 .maincontainer .flex-box {
-    background:white;
+    background: white;
     justify-content: center;
     align-items: center;
     padding: 1vw;
     height: 60vh;
 }
-.maincontainer .flexdiv{
+
+.maincontainer .flexdiv {
     text-align: center;
     padding: 4vw;
     font-size: 1.3vw;
 }
-.maincontainer .flex-box input{
+
+.maincontainer .flex-box input {
     width: 37vw;
     padding: 1.5vh;
     margin: 1.5vh;
     background-color: #f5f7f8;
 }
-.maincontainer .flex-box textarea{
+
+.maincontainer .flex-box textarea {
     width: 37vw;
     padding: 1.5vh;
     margin: 1.5vh;
     background-color: #f5f7f8;
 }
-.maincontainer .flex-box button{
+
+.maincontainer .flex-box button {
     width: 14vw;
     padding: 1.5vh;
     margin: 1.1vh;
@@ -148,19 +191,21 @@ contact page design */
 
 
 /* cart page design */
-.cartmain{
+.cartmain {
     margin-top: 30vh;
 }
-.cart-page{
+
+.cart-page {
     margin-top: 15vh auto;
     width: 50%;
     text-align: center;
     align-items: center;
     justify-content: center;
 }
-.table{
+
+.table {
     width: 40%;
-   
+
 }
 
 
