@@ -3,20 +3,14 @@
 {% block content %}
     <div class="container-fluid cartmain">
         <h1>Your Cart</h1>
-    <ul>
-    {% for product, info in cart.items %}
-        <li>
-            <img src="{{ info.image_url }}" alt="Image" width="50">
-            {{ product }} - {{ info.quantity }} x ${{ info.price }}
-        </li>
-    {% endfor %}
-    </ul>
-    <form method="post" action="{% url 'cart' %}">
-        {% csrf_token %}
-        <input type="hidden" name="product" value="product">
-        <input type="hidden" name="productimg" value="productimg"> 
-        <input type="hidden" name="price" value="price"> 
-        <a href="/" type="submit">View Products</a>
-    </form>
+        <ul>
+        {% for product, info in cart.items %}
+            <li>
+                <img src="{{ info.image_url }}" alt="Image" width="50">
+                {{ product }} - {{ info.quantity }} x ${{ info.price }}
+            </li>
+        {% endfor %}
+        </ul>
+        <a href="/">View Products</a>
     </div>
 {% endblock %}
