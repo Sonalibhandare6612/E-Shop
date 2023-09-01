@@ -192,20 +192,13 @@ contact page design */
 
 /* cart page design */
 .cartmain {
-    margin-top: 30vh;
+    margin-top: 35vh;
 }
 
-.cart-page {
-    margin-top: 15vh auto;
-    width: 50%;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.table {
-    width: 40%;
-
+.cartheading{
+    margin-top: 55vh;
+    font-size: 1vw;
+    color: black;
 }
 
 
