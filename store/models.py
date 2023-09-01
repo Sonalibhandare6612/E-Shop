@@ -1,4 +1,6 @@
 from django.db import models
+from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -36,6 +38,16 @@ class Products(models.Model):
             return Products.objects.filter(category = category_id)   
         else:
             return Products.get_all_products()
+        
+    def get_product_details(self):
+        return {
+            'name': self.name,
+            'description': self.description,
+            'image': self.image.url ,  # Make sure to adjust this based on your image field
+            'price': self.price,
+        }        
+        
+        
 
 
 
@@ -67,6 +79,4 @@ class Customer(models.Model):
             
         else:
             return False    
-    
-    
     
