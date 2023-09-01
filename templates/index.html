@@ -35,28 +35,23 @@
           <img src="{{product.image.url}}" height="300vh" class="card-img-top" alt="image">
           <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
-            
+  
             <p class="card-text">{{product.description}}</p>
             <p class="card-text"><b>{{product.price}}</b></p>
-            <!-- <a href="#" class="btn btn-primary m-1">Order</a> -->
-            <form action="{% url 'cart' %}" method="POST">
+            
+            <form action="#productsec" method="POST">
               {% csrf_token %}
-              <input type="hidden" name="product" value="{{product.id}}">
-              <input type="hidden" name="price" value="{{product.price}}">
-              <input type="hidden" name="productimg" value="{{product.image.url}}">
+              <input type="hidden" name="product_id" value="{{ product.id }}">
               <a href="#" class="btn btn-primary m-1">Order</a>
-              <input type="submit" class="btn btn-primary m-1" value="Cart">
-              <button class="btn" data-product-id="{{product.product_id}}"><i class="fa fa-heart"
-                aria-hidden="true"></i></button>
-
+              <button type="submit" class="btn btn-primary m-1">Cart</button>
             </form>
-
           </div>
         </div>
       </div>
       {% endfor %}
     </div>
   </section>
+  
 
 
 
