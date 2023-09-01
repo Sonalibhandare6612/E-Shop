@@ -13,5 +13,6 @@ urlpatterns = [
     path("contact", views.Contact.as_view(), name="contact"),
     path('cart/', views.Cart.as_view(), name='cart'),
     
+    
 ]
 
