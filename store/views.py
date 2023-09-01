@@ -1,28 +1,12 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.hashers import make_password, check_password
 from .models import Products, Category, Customer
-from . import models
 from django.views import View
+
+
 
 # Create your views here.
 class Index(View):
-    def post(self, request):
-        product = request.POST.get('product')
-        cart = request.session.get('cart')
-        if cart:
-            quantity = cart.get(product)
-            if quantity:
-                cart[product] = quantity + 1
-            else:
-                cart[product] = 1    
-        else:
-            cart = {}
-            cart[product] = 1
-            
-        request.session['cart'] = cart   
-        return redirect("index")
-    
-    
     def get(self, request):
         products = None
         categories = Category.get_all_categories()
@@ -37,14 +21,33 @@ class Index(View):
         data['products'] = products
         data['categories'] = categories
         return render(request, "index.html",data)
+    
+    def post(self, request):
+        product_id = request.POST.get('product_id')  # Get the product ID from the form
+        
+        try:
+            product = Products.objects.get(id=product_id)  # Retrieve the product from the database
+        except Products.DoesNotExist:
+            return redirect('index')
+        
+        # Ensure the 'cart' key is set in the session
+        cart = request.session.setdefault('cart', {})
+    
+        cart[product_id] = {
+            'id': product.id,
+            'name': product.name,
+            'price': product.price,
+            'image': product.image.url
+        }
+        productsc = cart
+        return render(request, 'cart.html', productsc)  
 
-        
-        
-        
-        
 
 
     
+
+        
+       
     
 class Signup(View):
     def get(self,request):
@@ -152,39 +155,22 @@ class Contact(View):
     def get(self, request):
         return render(request, "contact.html")
     
-    
-    
+
+# def cart(request):
+#     product_ids = request.session.get('cart', [])
+#     products = Products.objects.filter(id__in=product_ids)
+#     context = {'products': products}
+#     return render(request, 'cart.html', context)
 
 class Cart(View):
-    def __init__(self):
-        self.cart = {}
-    
-    def get(self, request):
-        self.cart = request.session.get('cart', self.cart)
-        return render(request, "cart.html", {'cart': self.cart})
-    
-    def post(self, request):
-        product = request.POST.get('product')
-        productimg = request.POST.get('productimg')  # Get the image URL
-        price = request.POST.get('price')  # Get the image URL
-        if self.cart:
-            quantity = self.cart.get(product)
-            if quantity:
-                self.cart[product]['quantity'] += 1  # Update quantity
-            else:
-                self.cart[product] = {
-                    'quantity': 1,
-                    'image_url': productimg,  # Store the image URL in the cart
-                    'price' : price
-                }
-        else:
-            self.cart = {}
-            self.cart[product] = {
-                'quantity': 1,
-                'image_url': productimg,  # Store the image URL in the cart
-                'price' : price
-            }
+    def get(self, request, *args, **kwargs):
+        cart_items = request.session.get('cart', [])  # Retrieve cart items from session
         
-        request.session['cart'] = self.cart
-        return redirect("index")
+        context = {
+            'cart_items': cart_items
+        }
+        
+        return render(request, 'cart.html', context)
+
+
 
