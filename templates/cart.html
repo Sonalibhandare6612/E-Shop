@@ -7,21 +7,17 @@
 <div class="container-fluid col-lg-7 cartmain my-5 pt-5">
   <h3 class="cartheading mt-5 text-center">Your Cart</h3>
   {% if productsc %}
-  <div class="row"></div>
-    {% for product in productsc %}
-    <div class="col-sm-4 mt-4 mb-2">
-      <div class="card shadow">
-        <img src="{{ product.image.url }}" width="250px" height="260px" alt="image">
-        <div class="card-body">
-          <h3>{{ product.name }}</h3>
-          <p>{{ product.description }}</p>
-          <p>Price: ${{ product.price }}</p>
-          <button class="btn btn-primary">+</button>
-          <button class="btn btn-primary">--</button>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
+  <div class="row">
+    <ul>
+      {% for product in cart_products %}
+      <li>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100">
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+      </li>
+      {% endfor %}
+    </ul>
+
   </div>
   {% else %}
   <p>Your cart is empty</p>

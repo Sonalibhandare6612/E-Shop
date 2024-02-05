@@ -22,32 +22,8 @@ class Index(View):
         data['categories'] = categories
         return render(request, "index.html",data)
     
-    def post(self, request):
-        product_id = request.POST.get('product_id')  # Get the product ID from the form
-        
-        try:
-            product = Products.objects.get(id=product_id)  # Retrieve the product from the database
-        except Products.DoesNotExist:
-            return redirect('index')
-        
-        # Ensure the 'cart' key is set in the session
-        cart = request.session.setdefault('cart', {})
     
-        cart[product_id] = {
-            'id': product.id,
-            'name': product.name,
-            'price': product.price,
-            'image': product.image.url
-        }
-        productsc = cart
-        return render(request, 'cart.html', productsc)  
-
-
-
-    
-
-        
-       
+      
     
 class Signup(View):
     def get(self,request):
@@ -147,6 +123,7 @@ class Login(View):
 
 def logout(request):
     request.session.clear()
+    print("loguot")
     return redirect('Login')         
 
 
@@ -156,21 +133,30 @@ class Contact(View):
         return render(request, "contact.html")
     
 
-# def cart(request):
-#     product_ids = request.session.get('cart', [])
-#     products = Products.objects.filter(id__in=product_ids)
-#     context = {'products': products}
-#     return render(request, 'cart.html', context)
 
 class Cart(View):
-    def get(self, request, *args, **kwargs):
-        cart_items = request.session.get('cart', [])  # Retrieve cart items from session
-        
-        context = {
-            'cart_items': cart_items
-        }
-        
-        return render(request, 'cart.html', context)
+    def get(self, request):
+        # Retrieve the user's cart items from session
+        cart = request.session.get('cart', [])
+        cart = list(cart)
+        # Retrieve the products in the cart
+        cart_products = Products.objects.filter(id__in=cart)
+        return render(request, 'cart.html', {'cart_products': cart_products})
+
+    def post(self, request):
+        # Get the product ID from the POST request
+        product_id = request.POST.get('product_id')
+        cart_products = Products.objects.filter(id__in=cart)
+        if product_id:
+            # Initialize the cart as a list if it doesn't exist in the session
+            cart = request.session.get('cart', [])
+            cart = list(cart)
+            # Add the product ID to the cart
+            cart.append(product_id)
+            request.session['cart'] = cart  # Update the session variable
+            
+        return render(request, 'cart.html', {'cart_products': cart_products})
+
 
 
 

@@ -39,7 +39,7 @@
             <p class="card-text">{{product.description}}</p>
             <p class="card-text"><b>{{product.price}}</b></p>
             
-            <form action="#productsec" method="POST">
+            <form action="{% url 'cart' %}" method="POST">
               {% csrf_token %}
               <input type="hidden" name="product_id" value="{{ product.id }}">
               <a href="#" class="btn btn-primary m-1">Order</a>
